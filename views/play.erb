@@ -1,0 +1,35 @@
+<html>
+  <head>
+  </head>
+  <body>
+    <p>	Mastermind
+    </p>
+     <p>	The code is <%= @code %>
+    </p>   
+     <p>  Game won is <%= @game_won %>
+    </p> 
+    <p>  The turn number is <%= @turns %>
+    </p>  
+ 
+     <p>  The guess is <%= @guess %>
+    </p>  
+    <p>  The answer is <%= @answer %>
+    </p>  
+    <form action='/guess' method='POST' >
+  	  <input type='number' name='guess1' />
+      <input type='number' name='guess2' />
+      <input type='number' name='guess3' />
+      <input type='number' name='guess4' />
+  	  <input type='submit' value='Guess!' />
+	</form>
+
+
+		<p> <%= @message %> </p>
+
+  <a href="./">Main menu</a>
+
+
+  </body>
+</html>
+
+
