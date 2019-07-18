@@ -1,33 +1,109 @@
+
+<!DOCTYPE html>
 <html>
   <head>
+    <title>Mindmaster</title>
+    <link rel="stylesheet" type="text/css" href="/style.css">
+
   </head>
   <body>
-    <p>	Mastermind
-    </p>
-     <p>	The code is <%= @code %>
-    </p>   
-     <p>  Game won is <%= @game_won %>
-    </p> 
-    <p>  The turn number is <%= @turns %>
-    </p>  
- 
-     <p>  The guess is <%= @guess %>
-    </p>  
-    <p>  The answer is <%= @answer %>
-    </p>  
-    <form action='/guess' method='POST' >
-  	  <input type='number' name='guess1' />
-      <input type='number' name='guess2' />
-      <input type='number' name='guess3' />
-      <input type='number' name='guess4' />
-  	  <input type='submit' value='Guess!' />
-	</form>
 
+    <div class='top'>
+      <p>  Mindmaster
+      </p>
+    </div>
+    
+    <div class='container'>
+      
+      <div class='boards'>
+        
+        <table class='mainBoard'>
 
-		<p> <%= @message %> </p>
+          <th colspan="4">Your guesses</th>
 
-  <a href="./">Main menu</a>
+          <%  @board.each do |var| %>
+            <tr>
+              <td> <%= var[0] %> </td>
+              <td> <%= var[1] %> </td>
+              <td> <%= var[2] %> </td>
+              <td> <%= var[3] %> </td>
+            </tr>
+          <% end %>
+        </table>
+        
+        <table class='answerBoard'> 
 
+          <th colspan="4">Your results</th>
+
+          <%  @answer_board.each do |var| %>
+            <tr>
+              <td> <%= var[0] %> </td>
+              <td> <%= var[1] %> </td>
+              <td> <%= var[2] %> </td>
+              <td> <%= var[3] %> </td>
+            </tr>
+          <% end %>
+        </table>
+
+        <div class='rules'>
+          
+          <p>How to play: <br />
+          <br /> 
+          A secret code has been chosen, consisting of four numbers from 1-6 inclusive. Duplicate numbers are allowed.<br /> 
+          <br /> 
+          Select your numbers below to make your guess.<br /> 
+          <br /> 
+          Every guess that is the correct number AND in the correct position, gets an X in the answer table.<br /> 
+          <br /> 
+          Every guess that is the correct number but in the wrong place, gets an O in the answer table.<br /> 
+          <br /> 
+          The answers are not arranged in order.<br /> 
+          <br /> 
+          Now crack that code, secret agent!</p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+<div class='winMessage'>
+
+    <p> <%= @message %> </p>
+</div>
+
+<div class='lowerContainer'>
+
+  <div class='actions'>
+
+    <div class='guess'>
+      <form action='/guess' method='POST' >
+    	  <input type='number' name='guess1' />
+        <input type='number' name='guess2' />
+        <input type='number' name='guess3' />
+        <input type='number' name='guess4' />
+    	  <input id='guessButton' type='submit' value='Guess!' />
+    	</form>
+    </div>
+
+    <div class='turns'>
+      <p> Turn <%= @turns %> </p>   
+    </div>
+
+  </div>
+</div>
+
+<div class='messages'>
+
+    <form  action="/" method="POST">
+      <input class="newGame" type="submit" value="Play New Game"/>
+    </form>
+
+    <form  action="/" method="GET">
+      <input class="mainMenu" type="submit" value="Main Menu"/>
+    </form>
+
+</div>
 
   </body>
 </html>

@@ -1,15 +1,27 @@
-<html>
-  <head>
-  </head>
-  <body>
-    <p>	Mastermind
-    </p>
+<!DOCTYPE html>
 
-    <form class="role" action="/" method="POST">
-    	<input type="submit" value="Play New Game"/>
-    </form>
+<html>
+  <head>    
+  	<title>Mindmaster</title>
+    <link rel="stylesheet" type="text/css" href="/style.css">
+  </head>
+
+  <body>
+
+    <div class='top'>
+      <p>  Mindmaster
+      </p>
+    </div>
+
+	<div class='frontActions'>
+
+	    <form  action="/" method="POST">
+	    	<input class="newGame" type="submit" value="Play New Game"/>
+	    </form>
 
 		<p> <%= @message %> </p>
+
+	</div>
 
   </body>
 </html>

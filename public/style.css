@@ -1,0 +1,118 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+.top {
+	width: 100%;
+	height: 30px;
+	text-align: center;
+	padding-top: 10px;
+	font-size: 20px;
+}
+
+.container {
+	width: 100%;
+	height: 400px;
+}
+
+.boards {
+	width: 600px;
+	height: auto;
+	background-color: #7be7b5;
+
+	margin: auto;
+	display: flex;
+	text-align: center;
+}
+
+.mainBoard, 
+.answerBoard {
+	background-color: #7be7b5;
+  	padding: 15px;
+  	border-spacing: 5px;
+	margin: auto;
+	table-layout: fixed;
+}
+
+th, td {
+   	border: 1px solid black;
+  	width: 100px;
+  	height: 20px;
+  	overflow: hidden;	
+}
+
+.rules {
+	text-align: left;
+	width: 400px;
+	padding: 15px;
+	font-size: 13px;
+}
+
+.lowerContainer {
+	  display: flex;
+	  width: 100%;
+}
+
+.actions {
+	width: 400px;
+	height: 50px;
+	background-color: #7be7b5;
+	margin: auto;
+	display: flex;
+	text-align: center;
+}
+
+.guess {
+	height: 200px;
+	width: 300px;
+	padding: 5px;
+	margin: auto;
+}
+
+.turns {
+	height: 200px;
+	width: 100px;
+	padding: 5px;
+	margin: auto;	
+	font-size: 16px;
+}
+
+input {
+	max-width: 40px;
+}
+
+#guessButton {
+	max-width: 100px;
+}
+
+.messages {
+	width: 400px;
+	height: 100px;
+	margin: auto;
+	text-align: center;
+}
+
+.newGame, 
+.mainMenu {
+	max-width: 100px;
+	margin-top: 16px;
+}
+
+.frontActions {
+	width: 200px;
+	height: 50px;
+	background-color: #7be7b5;
+	margin: auto;
+	display: block;
+	text-align: center;
+}
+
+.winMessage {
+	width: 100%;
+	height: 30px;
+	text-align: center;
+}
+
+
+
