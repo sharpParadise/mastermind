@@ -1,3 +1,4 @@
 
-require './web_guesser'
+require './mastermind'
 run Sinatra::Application
+
